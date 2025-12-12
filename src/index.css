@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Design chaleureux et apaisant pour Silver Voice */
+    --background: 35 40% 96%;
+    --foreground: 25 25% 25%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 25 25% 25%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 25 25% 25%;
+
+    /* Rose corail doux - couleur principale chaleureuse */
+    --primary: 345 75% 68%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Lavande pâle pour les zones secondaires */
+    --secondary: 260 45% 88%;
+    --secondary-foreground: 25 25% 25%;
+
+    /* Zones en retrait, ton sur ton */
+    --muted: 35 30% 92%;
+    --muted-foreground: 25 15% 50%;
+
+    /* Vert menthe pour les accents positifs */
+    --accent: 160 55% 75%;
+    --accent-foreground: 25 25% 25%;
+
+    --destructive: 0 70% 65%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 35 25% 88%;
+    --input: 35 25% 88%;
+    --ring: 345 75% 68%;
+
+    --radius: 1rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Mode sombre optionnel avec tons chaleureux */
+    --background: 25 20% 12%;
+    --foreground: 35 40% 95%;
+
+    --card: 25 18% 15%;
+    --card-foreground: 35 40% 95%;
+
+    --popover: 25 18% 15%;
+    --popover-foreground: 35 40% 95%;
+
+    --primary: 345 70% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 260 35% 25%;
+    --secondary-foreground: 35 40% 95%;
+
+    --muted: 25 15% 20%;
+    --muted-foreground: 35 20% 60%;
+
+    --accent: 160 45% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 25 15% 25%;
+    --input: 25 15% 25%;
+    --ring: 345 70% 65%;
+    
+    --sidebar-background: 25 20% 12%;
+    --sidebar-foreground: 35 40% 95%;
+    --sidebar-primary: 345 70% 65%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 25 15% 20%;
+    --sidebar-accent-foreground: 35 40% 95%;
+    --sidebar-border: 25 15% 25%;
+    --sidebar-ring: 345 70% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "liga" 1, "calt" 1;
+  }
+  
+  /* Typographie adaptée aux seniors */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+  
+  h1 {
+    @apply text-3xl md:text-4xl;
+  }
+  
+  h2 {
+    @apply text-2xl md:text-3xl;
+  }
+  
+  /* Amélioration du contraste des boutons */
+  button {
+    @apply transition-all duration-200;
+  }
+  
+  /* Focus visible pour l'accessibilité */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+}
