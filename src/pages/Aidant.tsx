@@ -1,6 +1,7 @@
 import { PhoneFrame } from "@/components/PhoneFrame";
 import { TopBar } from "@/components/TopBar";
 import { BottomNav } from "@/components/BottomNav";
+import { WeeklyCalendar } from "@/components/WeeklyCalendar";
 import { Users, Bell, MessageCircle, Calendar, Heart, Loader2 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { Card } from "@/components/ui/card";
@@ -268,7 +269,7 @@ const Aidant = () => {
               Tout voir
             </Button>
           </div>
-          
+
           {reminders.length > 0 ? (
             <div className="space-y-2">
               {reminders.map((reminder) => (
@@ -279,8 +280,8 @@ const Aidant = () => {
                       <p className="text-sm text-muted-foreground">{formatReminderDate(reminder.due_at)}</p>
                     </div>
                     <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                      reminder.status === 'pending' 
-                        ? 'bg-primary/10 text-primary' 
+                      reminder.status === 'pending'
+                        ? 'bg-primary/10 text-primary'
                         : 'bg-secondary/50 text-secondary-foreground'
                     }`}>
                       {reminder.status === 'pending' ? 'En attente' : 'Reporté'}
@@ -295,6 +296,9 @@ const Aidant = () => {
             </Card>
           )}
         </div>
+
+        {/* Weekly Calendar */}
+        {circleId && <WeeklyCalendar circleId={circleId} />}
 
         {/* Recent messages */}
         {messages.length > 0 && (

@@ -2,6 +2,7 @@ import { PhoneFrame } from "@/components/PhoneFrame";
 import { BigButton } from "@/components/BigButton";
 import { TopBar } from "@/components/TopBar";
 import { BottomNav } from "@/components/BottomNav";
+import { WeeklyCalendar } from "@/components/WeeklyCalendar";
 import { Mic, Sun, MessageCircle, Calendar, Users, Loader2 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { Card } from "@/components/ui/card";
@@ -222,6 +223,9 @@ const Senior = () => {
             </Card>
           )}
         </div>
+
+        {/* Weekly Calendar */}
+        {circleId && <WeeklyCalendar circleId={circleId} />}
 
         {/* Recent messages */}
         {messages.length > 0 && (

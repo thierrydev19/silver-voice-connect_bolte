@@ -15,6 +15,7 @@ import Aidant from "./pages/Aidant";
 import Reminders from "./pages/Reminders";
 import Morning from "./pages/Morning";
 import Messages from "./pages/Messages";
+import Calendar from "./pages/Calendar";
 import Circle from "./pages/Circle";
 import CircleManagement from "./pages/CircleManagement";
 import Settings from "./pages/Settings";
@@ -38,6 +39,7 @@ const App = () => (
             <Route path="/reminders" element={<Reminders />} />
             <Route path="/morning" element={<Morning />} />
             <Route path="/messages" element={<Messages />} />
+            <Route path="/calendar" element={<Calendar />} />
             <Route path="/circle" element={<Circle />} />
             <Route path="/circle/manage" element={<CircleManagement />} />
             <Route path="/settings" element={<Settings />} />
